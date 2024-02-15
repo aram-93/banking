@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="~{layout}"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+
+<body>
+<main layout:fragment="content">
+    <div class="container" th:object="${currentBankInfo}">
+        <div class="row mb-4">
+            <div class="container-fluid logo-background p-2">
+                <img th:src="*{config.imgURL}" class="rounded">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8 bg-light p-4">
+
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <h5 class="text-center">Իրավաբանական անձանց տրվող վարկ</h5>
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                             data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <ol class="list-group list-group-numbered">
+                                    <p class="list-group-item" th:each="credit : *{creditPageViewItemListLegal}">
+                                        <span th:text="${credit.description}"></span>
+                                        <span th:text="${credit.creditPercent + '%'}"></span>
+                                    </p>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <h5 class="text-center">Ֆիզիկական անձանց տրվող վարկ</h5>
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                             data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <ol class="list-group list-group-numbered">
+                                    <p class="list-group-item" th:each="credit : *{creditPageViewItemListPersonal}">
+                                        <span th:text="${credit.description}"></span>
+                                        <span th:text="${credit.creditPercent + '%'}"></span>
+                                    </p>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4" th:style="'background:'+*{config.color}+';'">
+                <div id="calculator" class=" mt-2 mb-2 w-75" th:text="*{calculatorInfo.name}">
+                </div>
+                <button type="button" class="btn btn-outline-dark mb-2">Հաշվել</button>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>

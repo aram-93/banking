@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="~{layout}"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<body>
+<main layout:fragment="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <img class="d-block w-100" src="/img/Inecobank_Account_Packages_arm.png" alt="First slide">
+            </div>
+            <div class=" col-4">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Գնում</th>
+                        <th scope="col">Վաճառք</th>
+                        <th scope="col">ԿԲ</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row" class="bi bi-currency-dollar">USD</th>
+                        <td>474</td>
+                        <td>482</td>
+                        <td>479.3</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="bi bi-currency-euro">EUR</th>
+                        <td>543.5</td>
+                        <td>562</td>
+                        <td>554.41</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="bi bi-currency-euro">RUR</th>
+                        <td>6.56</td>
+                        <td>6.84</td>
+                        <td>6.65</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>

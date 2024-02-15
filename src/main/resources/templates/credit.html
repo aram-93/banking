@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="~{layout}"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+
+<body>
+<main layout:fragment="content">
+    <p id="showHideElement"  width="60" height="40" style="display: none ;background: #acf59a;color: #0f5132" class=" text-center">
+        Update is success!
+    </p>
+    <p id="deleteCredit"  width="60" height="40" style="display: none ;background: #f95959a1;color: #df0707" class=" text-center">
+        Delete is success!
+    </p>
+    <table class="table table-hover logo-background">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col" style="display: none">ID</th>
+            <th scope="col">Բանկ</th>
+            <th scope="col"></th>
+            <th scope="col">Վարկատեսակի նկարագրություն</th>
+            <th scope="col">Տոկոսադրույք</th>
+            <th scope="col" colspan="2">Գործողություններ</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="item ,iterator : ${creditsViewItemList}">
+            <th scope="row" id="number" th:text="${iterator.index+1}" ></th>
+            <td th:text="${item.credit.id}" style="display: none" name="id"></td>
+            <td th:text="${item.bankName}" name="bankName"></td>
+            <td>
+                <img th:src="${item.config.imgURL}" class="rounded">
+            </td>
+            <td th:text="${item.credit.description}" name="description" id="edit" contenteditable="true"></td>
+            <td th:text="${item.credit.creditPercent + '%'}" name="percent" contenteditable="true"></td>
+            <td>
+                <button id="success" onclick="onUpdateCreditsInfo(this)" class="btn btn-primary">Update</button>
+            </td>
+            <td>
+                <button onclick="onDeleteCreditsInfo(this)" class="btn btn-danger">Delete</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</main>
+</body>
+</html>

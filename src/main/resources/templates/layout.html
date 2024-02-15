@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HCC Armenia Admin</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap/bootstrap.min.css}"/>
+    <link th:href="@{/css/dashboard.css}" rel="stylesheet"/>
+    <script th:src="@{/js/bootstrap.bundle.js}"></script>
+    <script th:src="@{/js/main.js}"></script>
+</head>
+<body>
+<div layout:fragment="nav" class="container py-3">
+    <header>
+        <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+            <a class="me-3 fs-4 py-2 text-dark text-decoration-none" href="/dashboard">Admin Dashboard | HCC Armenia</a>
+            <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+                <a class="me-3 py-2 text-dark text-decoration-none" href="/dashboard">Գլխավոր</a>
+                <div class="btn-group">
+                    <button type="button" class="btn  me-3  dropdown-toggle" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                        Իրավաբանական
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/dashboard/LEGAL/BUSINESS">Բիզնես վարկ</a></li>
+                        <li><a class="dropdown-item" href="/dashboard/LEGAL/GREEN">Կանաչ բիզնես վարկ</a></li>
+                        <li><a class="dropdown-item" href="/dashboard/LEGAL/EXPORT">ներմուծման վարկ</a></li>
+                        <li><a class="dropdown-item" href="/dashboard/LEGAL/IMPORT">Արտահանման վարկ</a></li>
+                        <li><a class="dropdown-item" href="/dashboard/LEGAL/OVERDRAFT">Օվերդրաֆտ</a></li>
+                    </ul>
+                    <button type="button" class="btn dropdown-toggle me-3 " data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                        Ֆիզիկական
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/dashboard/PERSONAL/CLICK">1 CLICK օնլայն վարկ</a></li>
+                        <li><a class="dropdown-item" href="/dashboard/PERSONAL/INSTALLMENT">Ապառիկ տեղում</a></li>
+                        <li><a class="dropdown-item" href="/dashboard/PERSONAL/NONCOLLATERAL"> Անգրավ վարկ</a></li>
+                        <li><a class="dropdown-item" href="/dashboard/PERSONAL/COLLATERAL"> Գրավով վարկ</a></li>
+                        <li><a class="dropdown-item" href="/dashboard/PERSONAL/OVERDRAFT">Արագ օվերդրաֆտ </a></li>
+                        <li><a class="dropdown-item" href="/dashboard/PERSONAL/MORTGAGE">Հիփոթեքային վարկ</a></li>
+                        <li><a class="dropdown-item" href="/dashboard/PERSONAL/CONSUMER">Սպառողական վարկ</a></li>
+                        <li><a class="dropdown-item" href="/dashboard/PERSONAL/AGRICULTURAL">Գյուղատնտեսակն վարկ</a></li>
+                    </ul>
+                </div>
+                <div class="btn-group">
+                    <button type="button" class="btn  me-3  dropdown-toggle" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                         Բանկեր
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/dashboard/inecobank">INECO BANK</a></li>
+                        <li><a class="dropdown-item" href="/dashboard/idbank">ID BANK</a></li>
+                        <li><a class="dropdown-item" href="/dashboard/abbbank">ABB BANK</a></li>
+                        <li><a class="dropdown-item" href="/dashboard/acbabank">ACBA BANK</a></li>
+                        <li><a class="dropdown-item" href="/dashboard/aebbank">AEB BANK</a></li>
+                        <li><a class="dropdown-item" href="/dashboard/araratbank">ARARAT BANK</a></li>
+                        <li><a class="dropdown-item" href="/dashboard/conversebank">CONVERSE BANK</a></li>
+                        <li><a class="dropdown-item" href="/dashboard/unibank">UNI BANK</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main layout:fragment="content">
+        <p>No content</p>
+    </main>
+</div>
+</body>
+</html>

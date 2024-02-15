@@ -1,0 +1,12 @@
+.logo-background  {
+    background-color: #e2e4f5c9;
+}
+
+.accordion-button:not(.collapsed){
+        color: #1c1d24 !important;
+        background-color: #e6e7f1 !important;
+}
+
+.list-group-item+.list-group-item {
+    border-top-width: 1px !important;
+}
