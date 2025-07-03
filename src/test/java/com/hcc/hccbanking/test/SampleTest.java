@@ -1,6 +1,6 @@
 package com.hcc.hccbanking.test;
 
-import comon.TestExecutionListener;
+import com.hcc.hccbanking.comon.TestExecutionListener;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;

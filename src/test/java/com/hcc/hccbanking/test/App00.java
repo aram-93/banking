@@ -1,6 +1,6 @@
 package com.hcc.hccbanking.test;
 
-import comon.BaseTest;
+import com.hcc.hccbanking.comon.BaseTest;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
