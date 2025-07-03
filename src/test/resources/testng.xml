@@ -3,7 +3,8 @@
 <suite name="Suite">
     <test name="tests0" parallel="classes" enabled="true" thread-count="5">
         <packages>
-            <package name="com.hcc.hccbanking.test"/>
+            <package name="com.hcc.hccbanking.test.apptest"/>
+            <package name="com.hcc.hccbanking.test.tt"/>
         </packages>
     </test>
 </suite>
