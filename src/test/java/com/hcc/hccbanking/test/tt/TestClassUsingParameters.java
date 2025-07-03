@@ -7,7 +7,7 @@ import java.util.HashMap;
 
 public class TestClassUsingParameters {
 
-    @Test(groups = {"ttfb"}, description = "my test description", dataProvider = "dp")
+    @Test(groups = {"ttfb"}, description = "my test description")
     public void testMethod() {
         String name = "jskfhhTest";
         int age = 20;
