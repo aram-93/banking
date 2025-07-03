@@ -1,12 +1,14 @@
 package com.hcc.hccbanking.test.tt;
 
+import io.qameta.allure.Description;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class TestClassUsingDataProvider {
 
-    @Test(groups = {"ttfb"}, dataProvider = "dpp", description = "my test description value")
+    @Test(groups = {"ttfb"}, dataProvider = "dpp")
+    @Description("my test description value")
     public void testMethod(String name, int age) {
 
         Assert.assertNotNull(name);

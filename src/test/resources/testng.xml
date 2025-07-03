@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-    <test name="tests0" parallel="classes" enabled="true" thread-count="5">
+    <test name="tests" parallel="classes" thread-count="5">
         <packages>
             <package name="com.hcc.hccbanking.test.apptest"/>
             <package name="com.hcc.hccbanking.test.tt"/>
