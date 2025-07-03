@@ -1,4 +1,4 @@
-package com.hcc.hccbanking.test;
+package com.hcc.hccbanking.test.apptest;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;

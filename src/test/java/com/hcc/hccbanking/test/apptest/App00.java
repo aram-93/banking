@@ -1,4 +1,4 @@
-package com.hcc.hccbanking.test;
+package com.hcc.hccbanking.test.apptest;
 
 import com.hcc.hccbanking.comon.BaseTest;
 import io.qameta.allure.Description;
@@ -7,30 +7,35 @@ import io.qameta.allure.SeverityLevel;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class App02 extends BaseTest {
+public class App00 extends BaseTest {
+
+    String parameter;
 
     @DataProvider(name = "testData")
     public Object[][] testDataProvider() {
-        return new Object[][] {
+        return new Object[][]{
                 {"Data for test 1"},
                 {"Data for test 2"}
         };
     }
-
     @Severity(SeverityLevel.CRITICAL)
     @Description("check test data")
     @Test(dataProvider = "testData")
     public void testMethod(String data) {
-
+        System.err.println(param);
+        device = "00000222";
         System.out.println("Test method received data: " + data);
-        System.out.println("Shared data: " + sharedData);
-        System.out.println("device test.App02: " + device);
+        System.out.println("Shared data: " + BaseTest.sharedData);
+        System.out.println("device test.App00: " + device);
     }
-    @Severity(SeverityLevel.NORMAL)
-    @Description("check test data")
+
+
     @Test()
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("check test data")
     public void testMethod01() {
-        System.out.println("Test method received data: " + "001");
-        System.out.println("Shared data: " + sharedData);
+        device = "000003547";
+        System.out.println("device test.App00 " + device);
+        System.out.println("Shared data: " + BaseTest.sharedData);
     }
 }

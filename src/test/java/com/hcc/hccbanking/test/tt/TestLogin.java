@@ -1,4 +1,4 @@
-package com.hcc.hccbanking.test;
+package com.hcc.hccbanking.test.tt;
 
 import io.qameta.allure.*;
 import org.openqa.selenium.By;

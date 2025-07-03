@@ -1,4 +1,4 @@
-package com.hcc.hccbanking.test;
+package com.hcc.hccbanking.test.apptest;
 
 import com.hcc.hccbanking.comon.TestExecutionListener;
 import org.testng.Assert;
