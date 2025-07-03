@@ -7,7 +7,7 @@ import io.qameta.allure.SeverityLevel;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class App00 extends BaseTest {
+public class AppaTest extends BaseTest {
 
     String parameter;
 

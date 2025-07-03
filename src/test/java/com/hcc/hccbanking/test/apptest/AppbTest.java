@@ -5,7 +5,7 @@ import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.testng.annotations.Test;
 
-public class App004 {
+public class AppbTest {
 
     @Severity(SeverityLevel.CRITICAL)
     @Description("check test data")

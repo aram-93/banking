@@ -7,7 +7,7 @@ import io.qameta.allure.SeverityLevel;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class App02 extends BaseTest {
+public class AppDTest extends BaseTest {
 
     @DataProvider(name = "testData")
     public Object[][] testDataProvider() {

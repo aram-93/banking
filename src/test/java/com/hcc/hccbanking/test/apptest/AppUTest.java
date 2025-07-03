@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class App01 {
+public class AppUTest {
 
     @Severity(SeverityLevel.CRITICAL)
     @Description("check test data")
