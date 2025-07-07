@@ -1,11 +1,11 @@
 package com.hcc.hccbanking.test.apptest;
 
 import com.hcc.hccbanking.comon.BaseTest;
-import io.qameta.allure.Description;
-import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.*;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
+import java.io.IOException;
 
 public class AppaTest extends BaseTest {
 
@@ -19,9 +19,10 @@ public class AppaTest extends BaseTest {
         };
     }
     @Severity(SeverityLevel.CRITICAL)
-    @Description("check test data")
+    @Description(useJavaDoc = true)
+    @AllureId("123")
     @Test(dataProvider = "testData")
-    public void testMethod(String data) {
+    public void testMethod(String data) throws IOException {
         System.err.println(param);
         device = "00000222";
         System.out.println("Test method received data: " + data);
