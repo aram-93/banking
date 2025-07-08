@@ -23,8 +23,18 @@ public class AppaTest extends BaseTest {
     @AllureId("123")
     @Test(dataProvider = "testData")
     public void testMethod(String data) throws IOException {
+
+        Allure.step("step 1");
+
         System.err.println(param);
         device = "00000222";
+        System.out.println("Test method received data: " + data);
+        System.out.println("Shared data: " + BaseTest.sharedData);
+        System.out.println("device test.App00: " + device);
+
+        Allure.step("step 2");
+
+        device = "0002";
         System.out.println("Test method received data: " + data);
         System.out.println("Shared data: " + BaseTest.sharedData);
         System.out.println("device test.App00: " + device);
