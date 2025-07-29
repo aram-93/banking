@@ -12,5 +12,5 @@ WORKDIR /app
 # Rename and copy your JAR file (wildcard handles any jar name in target/)
 COPY --from=build /app/target/*.jar app.jar
 
-EXPOSE 8080
+EXPOSE 9090
 ENTRYPOINT ["java", "-jar", "app.jar"]
