@@ -7,10 +7,12 @@ import com.hcc.hccbanking.payload.BankDTO;
 import com.hcc.hccbanking.service.DataService;
 import com.hcc.hccbanking.service.ValidationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.http.HttpRequest;
 import java.util.List;
 import java.util.Locale;
 
@@ -31,7 +33,7 @@ public class DashboardController {
 
     @GetMapping("/{bankName}")
     public String main(Model model, @PathVariable String bankName) {
-
+        System.out.println(HttpHeaders.HOST +"host: ");
         CreditPageViewGrouped creditPageViewGrouped;
         if (validationService.isBankNameValid(bankName)) {
             creditPageViewGrouped = dataService.getCreditPageViewGrouped(bankName);

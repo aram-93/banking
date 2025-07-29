@@ -3,6 +3,7 @@ package com.hcc.hccbanking.controller;
 import com.hcc.hccbanking.payload.BankDTO;
 import com.hcc.hccbanking.service.DataService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -29,6 +30,7 @@ public class CreditController {
     private ResponseEntity<String> deleteCredit(Model model, @RequestBody BankDTO bankDTO) {
         boolean success = dataService.deleteBankInfo(bankDTO);
         model.addAttribute("bankDTOGetName", bankDTO.getId());
+        System.err.println(HttpHeaders.SERVER);
         if (success) {
             return new ResponseEntity<>(
                     "success",
