@@ -9,8 +9,8 @@ RUN mvn clean package -DskipTests
 FROM eclipse-temurin:11-jdk
 WORKDIR /app
 
-# Rename and copy your jar with a fixed name
-COPY --from=build /app/target/hcc-armenia-docker.jar app.jar
+# Rename and copy your JAR file (wildcard handles any jar name in target/)
+COPY --from=build /app/target/*.jar app.jar
 
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "app.jar"]
