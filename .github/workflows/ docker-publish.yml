@@ -2,13 +2,8 @@ name: Build and Push Docker Image to Docker Hub
 
 on:
   push:
-    branches:
-      - main
     tags:
-      - 'v*'
-  pull_request:
-    branches:
-      - main
+      - 'v*'   # Only trigger on tags like v1, v1.2, v2.0.1
 
 jobs:
   build-and-push:
@@ -18,18 +13,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set Docker tag
-        id: docker_tag
+      - name: Set Docker tag from Git tag
         run: |
-          if [[ "${GITHUB_REF}" == refs/tags/* ]]; then
-            VERSION_TAG="${GITHUB_REF#refs/tags/}"
-          elif [[ "${GITHUB_REF}" == refs/heads/* ]]; then
-            VERSION_TAG=$(git rev-parse --short HEAD)
-          else
-            # For pull requests or other refs like refs/pull/1/merge
-            VERSION_TAG="pr-${{ github.event.pull_request.number || 'unknown' }}-$(git rev-parse --short HEAD)"
-          fi
-          echo "DOCKER_TAG=$VERSION_TAG" >> $GITHUB_ENV
+          TAG_NAME=${GITHUB_REF#refs/tags/}
+          echo "DOCKER_TAG=$TAG_NAME" >> $GITHUB_ENV
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
