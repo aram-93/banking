@@ -1,0 +1,35 @@
+name: Build and Push Docker Image to Docker Hub
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.aram93 }}
+          password: ${{ secrets.dckr_pat_val8cYEFLJs5BMSrs2PQ45yK_qs }}
+
+      - name: Build and tag Docker image
+        run: |
+          IMAGE_NAME=${{ secrets.aram93 }}/banking
+          GIT_SHA=$(git rev-parse --short HEAD)
+          docker build -t $IMAGE_NAME:latest -t $IMAGE_NAME:$GIT_SHA .
+
+      - name: Push Docker image to Docker Hub
+        run: |
+          IMAGE_NAME=${{ secrets.aram93 }}/banking
+          docker push $IMAGE_NAME:latest
+          docker push $IMAGE_NAME:$GIT_SHA
