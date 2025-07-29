@@ -30,7 +30,7 @@ public class CreditController {
     private ResponseEntity<String> deleteCredit(Model model, @RequestBody BankDTO bankDTO) {
         boolean success = dataService.deleteBankInfo(bankDTO);
         model.addAttribute("bankDTOGetName", bankDTO.getId());
-        System.err.println(HttpHeaders.SERVER);
+        System.err.println("vblkfbflkbndf.lngdmd");
         if (success) {
             return new ResponseEntity<>(
                     "success",
