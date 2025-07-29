@@ -7,7 +7,7 @@ import com.hcc.hccbanking.payload.BankDTO;
 import java.util.List;
 
 public interface DataService {
-
+//vklfd;bk
     List<CreditPageViewItem> getCreditPageViewItemList(String clientType, String creditType);
 
     CreditPageViewGrouped getCreditPageViewGrouped(String bankName);
