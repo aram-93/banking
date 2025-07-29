@@ -33,7 +33,6 @@ public class DashboardController {
 
     @GetMapping("/{bankName}")
     public String main(Model model, @PathVariable String bankName) {
-        System.out.println("host: vddfbfbkjfb.ldfjblfg/nkg");
         CreditPageViewGrouped creditPageViewGrouped;
         if (validationService.isBankNameValid(bankName)) {
             creditPageViewGrouped = dataService.getCreditPageViewGrouped(bankName);
