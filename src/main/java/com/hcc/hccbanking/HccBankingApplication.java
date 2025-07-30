@@ -8,5 +8,6 @@ public class HccBankingApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(HccBankingApplication.class, args);
+		System.out.println("kxlcvndc");
 	}
 }
