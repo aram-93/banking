@@ -2,8 +2,6 @@ package com.hcc.hccbanking.controller;
 
 import com.hcc.hccbanking.model.CreditPageViewGrouped;
 import com.hcc.hccbanking.model.CreditPageViewItem;
-import com.hcc.hccbanking.model.Partner;
-import com.hcc.hccbanking.payload.BankDTO;
 import com.hcc.hccbanking.service.DataService;
 import com.hcc.hccbanking.service.ValidationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +10,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Locale;
 
 @Controller
 @RequestMapping({"/dashboard"})
@@ -31,7 +28,6 @@ public class DashboardController {
 
     @GetMapping("/{bankName}")
     public String main(Model model, @PathVariable String bankName) {
-
         CreditPageViewGrouped creditPageViewGrouped;
         if (validationService.isBankNameValid(bankName)) {
             creditPageViewGrouped = dataService.getCreditPageViewGrouped(bankName);
