@@ -8,6 +8,7 @@ class HccBankingApplicationTests {
 //test
 	@Test
 	void contextLoads() {
+		System.out.println("fff");
 	}
 
 }
