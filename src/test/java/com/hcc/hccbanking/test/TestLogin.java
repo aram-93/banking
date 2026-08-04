@@ -5,8 +5,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 
 @Epic("Login")
@@ -17,6 +17,7 @@ public class TestLogin {
     @Severity(SeverityLevel.CRITICAL)
     @Description("Login with valid credentials")
     public void testLogin() throws InterruptedException {
+        SoftAssert softAssert = new SoftAssert();
         WebDriver driver = new ChromeDriver();
 
         driver.get("https://practicetestautomation.com/practice-test-login/");
@@ -40,25 +41,27 @@ public class TestLogin {
             throw new RuntimeException();
         }
 
-        Assert.assertEquals(actualURL, expectedURL);
+        softAssert.assertEquals(actualURL, expectedURL);
 
         String expectedMessage = "Congratulations student. You successfully logged in!";
 
         String pageSource = driver.getPageSource();
 
         assert pageSource != null;
-        Assert.assertTrue(pageSource.contains(expectedMessage));
+        softAssert.assertTrue(pageSource.contains(expectedMessage));
 
         WebElement logout = driver.findElement(By.linkText("Log out"));
-        Assert.assertTrue(logout.isDisplayed());
+        softAssert.assertTrue(logout.isDisplayed());
 
         driver.quit();
+        softAssert.assertAll();
     }
 
     @Test
     @Severity(SeverityLevel.CRITICAL)
     @Description("Login with valid credentials")
     public void incorrectPassword() {
+        SoftAssert softAssert = new SoftAssert();
         WebDriver driver = new ChromeDriver();
 
         driver.get("https://practicetestautomation.com/practice-test-login/");
@@ -76,7 +79,7 @@ public class TestLogin {
         String source = driver.getPageSource();
 
         assert source != null;
-        Assert.assertTrue(source.contains(errorMessage));
+        softAssert.assertTrue(source.contains(errorMessage));
 
         try {
             Thread.sleep(2000);
@@ -84,6 +87,7 @@ public class TestLogin {
             throw new RuntimeException();
         }
         driver.quit();
+        softAssert.assertAll();
 
     }
 }
