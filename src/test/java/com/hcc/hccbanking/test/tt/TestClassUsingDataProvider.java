@@ -1,18 +1,20 @@
 package com.hcc.hccbanking.test.tt;
 
 import io.qameta.allure.Description;
-import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 public class TestClassUsingDataProvider {
 
     @Test(groups = {"ttfb"}, dataProvider = "dpp")
     @Description("my test description value")
     public void testMethod(String name, int age) {
+        SoftAssert softAssert = new SoftAssert();
 
-        Assert.assertNotNull(name);
-        Assert.assertNotEquals(age,18);
+        softAssert.assertNotNull(name);
+        softAssert.assertNotEquals(age,18);
+        softAssert.assertAll();
     }
 
     @DataProvider(name = "dpp")
